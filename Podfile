@@ -6,5 +6,7 @@ target 'TranslateAppArc' do
   use_frameworks!
 
   # Pods for TranslateAppArc
-
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
 end
