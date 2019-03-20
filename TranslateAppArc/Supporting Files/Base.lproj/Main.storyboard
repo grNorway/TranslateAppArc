@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="szC-H0-0e6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera-->
+        <scene sceneID="Hkl-ZL-MJ4">
+            <objects>
+                <viewController id="zz2-cE-1ZI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V4a-U2-J1Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tPH-cO-cjh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="icPhotoCameraActive" id="4At-1O-65v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sb-ck-UGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="192"/>
+        </scene>
+        <!--Text-->
+        <scene sceneID="vvg-4F-HbK">
+            <objects>
+                <viewController id="6Di-cJ-jXZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lWI-NK-4IL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ExR-7b-2rL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Text" image="icnTextActive" id="bYE-Fd-n0J">
+                        <color key="badgeColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSp-5O-rW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="-473"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aCH-wR-g8G">
+            <objects>
+                <tabBarController id="szC-H0-0e6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jfm-u0-Arx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6Di-cJ-jXZ" kind="relationship" relationship="viewControllers" id="Xhm-gK-ZZg"/>
+                        <segue destination="zz2-cE-1ZI" kind="relationship" relationship="viewControllers" id="guc-Bl-TPN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AE-1k-qJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1273" y="-141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icPhotoCameraActive" width="26" height="23"/>
+        <image name="icnTextActive" width="24" height="24"/>
+    </resources>
+</document>
