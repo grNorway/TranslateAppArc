@@ -25,7 +25,7 @@ class TextTranslatorPresenter: TextTranslatorPresentationLogic
   // MARK: Do something
   
     func presentTranslatedText(translatedText: String,error: Error?) {
-        //let viewModel = TextTranslator.GoogleTranslation.TranslationTextViewModel(translatedText : translatedText)
+        
         if let error = error as NSError?{
             
             viewController?.updateTranslatedText(translatedText: "Unable To Translate", error: error.localizedDescription)

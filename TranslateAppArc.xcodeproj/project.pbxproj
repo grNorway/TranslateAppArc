@@ -23,6 +23,7 @@
 		EA811AF32243955300DB6312 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AF22243955300DB6312 /* GoogleClient.swift */; };
 		EA811AF52243ADF200DB6312 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AF42243ADF200DB6312 /* Constants.swift */; };
 		EA811AF72243B6CC00DB6312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */; };
+		EA811AFA2243CF0B00DB6312 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AF92243CF0B00DB6312 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EA811AF22243955300DB6312 /* GoogleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 		EA811AF42243ADF200DB6312 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA811AF92243CF0B00DB6312 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2F79C322423F8900DAF50A /* AppDelegate.swift */,
+				EA811AF82243CEDA00DB6312 /* Storage */,
 				EA811AF02243951C00DB6312 /* Networking */,
 				EA811AE222438F0800DB6312 /* Modules */,
 				EA2F79D52242400800DAF50A /* Supporting Files */,
@@ -164,6 +167,14 @@
 				EA811AF42243ADF200DB6312 /* Constants.swift */,
 			);
 			path = GoogleClient;
+			sourceTree = "<group>";
+		};
+		EA811AF82243CEDA00DB6312 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EA811AF92243CF0B00DB6312 /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +342,7 @@
 				EA811AEB22438F2B00DB6312 /* TextTranslatorWorker.swift in Sources */,
 				EA811AEF22438F2B00DB6312 /* TextTranslatorInteractor.swift in Sources */,
 				EA811AF52243ADF200DB6312 /* Constants.swift in Sources */,
+				EA811AFA2243CF0B00DB6312 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
