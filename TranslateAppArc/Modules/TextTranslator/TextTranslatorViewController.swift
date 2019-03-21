@@ -77,6 +77,8 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
     
     @IBOutlet weak var fromTextToTranslate: UITextView!
     @IBOutlet weak var toTextToTranslate: UITextView!
+    @IBOutlet weak var buttonLangViewContainer: UIView!
+    
     //MARK: - Properties
     
     
