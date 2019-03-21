@@ -34,7 +34,7 @@
         <!--Text-->
         <scene sceneID="vvg-4F-HbK">
             <objects>
-                <viewController id="6Di-cJ-jXZ" sceneMemberID="viewController">
+                <viewController id="6Di-cJ-jXZ" customClass="TextTranslatorViewController" customModule="TranslateAppArc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lWI-NK-4IL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +177,15 @@
                     <tabBarItem key="tabBarItem" title="Text" image="icnTextActive" id="bYE-Fd-n0J">
                         <color key="badgeColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="FromChooseLangBtn" destination="UB0-7v-OQH" id="fRL-i6-5wn"/>
+                        <outlet property="ToChooseLangBtn" destination="rza-9R-wmt" id="xlJ-ix-61l"/>
+                        <outlet property="changeLangFromToBtn" destination="MTI-Ys-omU" id="8ue-Ag-svn"/>
+                        <outlet property="fromLangLabel" destination="t0i-0R-9Cr" id="fAb-OQ-nOv"/>
+                        <outlet property="fromTextToTranslate" destination="W7H-d9-8Re" id="QjU-q8-ahJ"/>
+                        <outlet property="toLangLabel" destination="hDz-IG-5Eb" id="BiQ-ra-Jnl"/>
+                        <outlet property="toTextToTranslate" destination="HUX-vQ-Cwm" id="5aL-jW-hrX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSp-5O-rW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
