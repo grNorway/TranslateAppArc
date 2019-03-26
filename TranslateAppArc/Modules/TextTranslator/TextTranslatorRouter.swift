@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol TextTranslatorRoutingLogic
 {
-  func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToSomewhere(segue: UIStoryboardSegue?,sender:Any?)
 }
 
 protocol TextTranslatorDataPassing
@@ -24,15 +24,22 @@ protocol TextTranslatorDataPassing
 
 class TextTranslatorRouter: NSObject, TextTranslatorRoutingLogic, TextTranslatorDataPassing
 {
+    
   weak var viewController: TextTranslatorViewController?
   var dataStore: TextTranslatorDataStore?
   
   // MARK: Routing
   
-  func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(segue: UIStoryboardSegue?, sender: Any?)
   {
     if let segue = segue {
       let destinationVC = segue.destination as! ChooseLanguagesViewController
+        let tag = sender as! Int
+        destinationVC.buttonTag = tag
+        destinationVC.delegate = viewController
+        
+        destinationVC.fromSelectedLanguage = viewController?.fromSelectedLanguage
+        destinationVC.toSelectedLanguage = viewController?.toSelectedLanguage
     }
 //      var destinationDS = destinationVC.router!.dataStore!
 //      passDataToSomewhere(source: dataStore!, destination: &destinationDS)

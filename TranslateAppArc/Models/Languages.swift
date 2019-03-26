@@ -12,6 +12,6 @@ struct Languages {
     
     static let shared = Languages()
     
-    var languages = [Language]()
+    var languages : [Language]? = nil
     
 }

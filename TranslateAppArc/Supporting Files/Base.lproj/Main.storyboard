@@ -69,7 +69,7 @@
                                                 </constraints>
                                                 <state key="normal" image="icnSwitch"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rza-9R-wmt">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rza-9R-wmt">
                                                 <rect key="frame" x="198.66666666666663" y="0.0" width="144.33333333333337" height="44"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                                 <state key="normal" title="Choose language">
@@ -210,14 +210,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnr-rS-PJz">
-                                <rect key="frame" x="12" y="115" width="351" height="44"/>
+                                <rect key="frame" x="12" y="105" width="351" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-zb-glb">
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-XV-hAt">
                                                 <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="44"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                 <state key="normal" title="Choose Language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -225,9 +225,9 @@
                                                     <action selector="fromLanguageButton:" destination="M2d-XM-Xlf" eventType="touchUpInside" id="fXn-Rb-Obg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-9D-oCw">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-9D-oCw">
                                                 <rect key="frame" x="181.66666666666663" y="0.0" width="169.33333333333337" height="44"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
                                                 <state key="normal" title="Choose Language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -263,6 +263,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -281,6 +282,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -297,11 +299,22 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eB-P2-7UX">
+                                <rect key="frame" x="305" y="44" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="diQ-xQ-bJw"/>
+                                    <constraint firstAttribute="height" constant="30" id="tpe-vh-1lE"/>
+                                </constraints>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="M2d-XM-Xlf" eventType="touchUpInside" id="4IL-Ts-3so"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gKo-wb-8Dc" firstAttribute="trailing" secondItem="esl-s1-VCq" secondAttribute="trailing" id="469-Dl-0Kc"/>
-                            <constraint firstItem="xnr-rS-PJz" firstAttribute="top" secondItem="esl-s1-VCq" secondAttribute="top" constant="71" id="7Lc-7N-DUd"/>
+                            <constraint firstItem="xnr-rS-PJz" firstAttribute="top" secondItem="esl-s1-VCq" secondAttribute="top" constant="61" id="7Lc-7N-DUd"/>
                             <constraint firstItem="gKo-wb-8Dc" firstAttribute="top" secondItem="KzC-PN-esq" secondAttribute="top" id="9im-Ta-oH2"/>
                             <constraint firstItem="gKo-wb-8Dc" firstAttribute="firstBaseline" secondItem="KzC-PN-esq" secondAttribute="firstBaseline" id="AA8-mk-SMI"/>
                             <constraint firstItem="gKo-wb-8Dc" firstAttribute="centerY" secondItem="KzC-PN-esq" secondAttribute="centerY" id="Bh5-eH-UWE"/>
@@ -309,11 +322,13 @@
                             <constraint firstItem="xnr-rS-PJz" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" constant="12" id="Ipc-NX-fEU"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="top" secondItem="KyT-3Z-Zdb" secondAttribute="bottom" constant="8" id="QNO-FA-Ufe"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="bottom" secondItem="esl-s1-VCq" secondAttribute="bottom" id="S8n-dC-1lR"/>
-                            <constraint firstItem="KyT-3Z-Zdb" firstAttribute="top" secondItem="xnr-rS-PJz" secondAttribute="bottom" constant="13" id="WNe-Pf-uMV"/>
+                            <constraint firstItem="KyT-3Z-Zdb" firstAttribute="top" secondItem="xnr-rS-PJz" secondAttribute="bottom" constant="23" id="WNe-Pf-uMV"/>
+                            <constraint firstItem="0eB-P2-7UX" firstAttribute="top" secondItem="esl-s1-VCq" secondAttribute="top" id="XAl-0r-HnM"/>
                             <constraint firstItem="esl-s1-VCq" firstAttribute="trailing" secondItem="xnr-rS-PJz" secondAttribute="trailing" constant="12" id="YsN-Dc-aD8"/>
                             <constraint firstItem="gKo-wb-8Dc" firstAttribute="bottom" secondItem="KzC-PN-esq" secondAttribute="bottom" id="fgP-z5-mHF"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" id="lk9-5Y-yAA"/>
                             <constraint firstItem="KyT-3Z-Zdb" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" constant="16" id="n5b-Zp-gvy"/>
+                            <constraint firstItem="esl-s1-VCq" firstAttribute="trailing" secondItem="0eB-P2-7UX" secondAttribute="trailing" constant="20" id="sMd-aF-Jiv"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="trailing" secondItem="esl-s1-VCq" secondAttribute="trailing" id="wHZ-xW-Y11"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="esl-s1-VCq"/>

@@ -33,6 +33,7 @@
 		EA811AF52243ADF200DB6312 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AF42243ADF200DB6312 /* Constants.swift */; };
 		EA811AF72243B6CC00DB6312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */; };
 		EA811AFD2243D6EA00DB6312 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */; };
+		EAA33272224A530E000196AC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA33271224A530E000196AC /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		EA811AF42243ADF200DB6312 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		EAA33271224A530E000196AC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */,
+				EAA33271224A530E000196AC /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				EA811AF32243955300DB6312 /* GoogleClient.swift in Sources */,
 				EA811AEC22438F2B00DB6312 /* TextTranslatorRouter.swift in Sources */,
 				EA811AED22438F2B00DB6312 /* TextTranslatorModels.swift in Sources */,
+				EAA33272224A530E000196AC /* UIViewController+Extensions.swift in Sources */,
 				EA811AEE22438F2B00DB6312 /* TextTranslatorViewController.swift in Sources */,
 				EA811AEA22438F2B00DB6312 /* TextTranslatorPresenter.swift in Sources */,
 				EA811AEB22438F2B00DB6312 /* TextTranslatorWorker.swift in Sources */,

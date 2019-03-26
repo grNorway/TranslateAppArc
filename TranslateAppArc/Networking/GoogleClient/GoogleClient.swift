@@ -74,9 +74,13 @@ class GoogleClient {
             
             do{
                 let responseObject = try decoder.decode(responseType.self, from: data)
-                completion(responseObject,nil)
+                DispatchQueue.main.async {
+                    completion(responseObject,nil)
+                }
             }catch{
-                completion(nil,error)
+                DispatchQueue.main.async {
+                    completion(nil,error)
+                }
             }
             
         }

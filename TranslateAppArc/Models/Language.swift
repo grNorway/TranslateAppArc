@@ -10,9 +10,13 @@ import Foundation
 
 struct Language : Codable {
     
-    let language : String
+    let languageCode : String
     let name : String
-    let isFromSelected :Bool?
-    let isToSelected :Bool?
+//    var isFromSelected :Bool!
+//    var isToSelected :Bool!
     
+    enum CodingKeys : String, CodingKey{
+        case name
+        case languageCode = "language"
+    }
 }

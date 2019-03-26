@@ -18,7 +18,7 @@ protocol TextTranslatorDisplayLogic: class
     func updateTranslatedText(translatedText: String,error: String?)
 }
 
-class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
+class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic,ChooseLanguageViewControllerDelegate
 {
     
     
@@ -61,7 +61,7 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
   {
     if let scene = segue.identifier {
       if let router = router {
-        router.routeToSomewhere(segue: segue)
+        router.routeToSomewhere(segue: segue, sender: sender)
       }
     }
   }
@@ -80,19 +80,20 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
     
     //MARK: - Properties
     
-    
+    var fromSelectedLanguage : Language?
+    var toSelectedLanguage : Language?
+    var languages : [Language]?
   
   // MARK: View lifecycle
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    setupButtonsContainer(container: buttonLangViewContainer)
     doSomething()
   }
   
-  // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
   
   func doSomething()
   {
@@ -113,7 +114,28 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
     //MARK: - Actions
     
     @IBAction func getLanguages(_ sender: UIButton) {
-        performSegue(withIdentifier: "toChooseLanguagesViewController", sender: nil)
+        
+        performSegue(withIdentifier: "toChooseLanguagesViewController", sender: sender.tag)
+    }
+    
+    func updateControllerWithChanges(fromSelectedLanguage: Language?, toSelectedlanguage: Language?, languages: [Language]?) {
+        
+        if let fromSelectedLanguage = fromSelectedLanguage{
+            self.fromSelectedLanguage = fromSelectedLanguage
+            FromChooseLangBtn.setTitle(fromSelectedLanguage.name, for: .normal)
+        }
+        
+        if let toSelectedlanguage = toSelectedlanguage{
+            self.toSelectedLanguage = toSelectedlanguage
+            ToChooseLangBtn.setTitle(toSelectedlanguage.name, for: .normal)
+        }
+        
+        if let languages = languages {
+            self.languages = languages
+        }
+        
+        
     }
     
 }
+
