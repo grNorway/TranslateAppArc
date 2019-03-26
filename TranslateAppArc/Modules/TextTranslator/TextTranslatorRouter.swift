@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol TextTranslatorRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol TextTranslatorDataPassing
@@ -29,20 +29,21 @@ class TextTranslatorRouter: NSObject, TextTranslatorRoutingLogic, TextTranslator
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+  func routeToSomewhere(segue: UIStoryboardSegue?)
+  {
+    if let segue = segue {
+      let destinationVC = segue.destination as! ChooseLanguagesViewController
+    }
+//      var destinationDS = destinationVC.router!.dataStore!
+//      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+//    } else {
+//      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//      let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
+//      var destinationDS = destinationVC.router!.dataStore!
+//      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+//      navigateToSomewhere(source: viewController!, destination: destinationVC)
+//    }
+  }
 
   // MARK: Navigation
   

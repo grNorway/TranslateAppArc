@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		03FC0714A59FC1743E07C76B /* Pods_TranslateAppArc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED7F97C4A3CB7355F1CFD1 /* Pods_TranslateAppArc.framework */; };
+		EA0E72852244DCCA003C68B7 /* ChooseLanguagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E727F2244DCCA003C68B7 /* ChooseLanguagesPresenter.swift */; };
+		EA0E72862244DCCA003C68B7 /* ChooseLanguagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72802244DCCA003C68B7 /* ChooseLanguagesWorker.swift */; };
+		EA0E72872244DCCA003C68B7 /* ChooseLanguagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72812244DCCA003C68B7 /* ChooseLanguagesRouter.swift */; };
+		EA0E72882244DCCA003C68B7 /* ChooseLanguagesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72822244DCCA003C68B7 /* ChooseLanguagesModels.swift */; };
+		EA0E72892244DCCA003C68B7 /* ChooseLanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72832244DCCA003C68B7 /* ChooseLanguagesViewController.swift */; };
+		EA0E728A2244DCCA003C68B7 /* ChooseLanguagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72842244DCCA003C68B7 /* ChooseLanguagesInteractor.swift */; };
+		EA0E728D2244F881003C68B7 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E728C2244F881003C68B7 /* Storage.swift */; };
+		EA0E72902244FD6B003C68B7 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E728F2244FD6B003C68B7 /* Languages.swift */; };
+		EA0E72922244FDA6003C68B7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72912244FDA6003C68B7 /* Language.swift */; };
 		EA2F79C422423F8900DAF50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F79C322423F8900DAF50A /* AppDelegate.swift */; };
 		EA2F79C922423F8900DAF50A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2F79C722423F8900DAF50A /* Main.storyboard */; };
 		EA2F79CB22423F8A00DAF50A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2F79CA22423F8A00DAF50A /* Assets.xcassets */; };
@@ -30,6 +39,15 @@
 		61D682B200A309DA5D90F526 /* Pods-TranslateAppArc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateAppArc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateAppArc/Pods-TranslateAppArc.debug.xcconfig"; sourceTree = "<group>"; };
 		6AED7F97C4A3CB7355F1CFD1 /* Pods_TranslateAppArc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranslateAppArc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4C0C8BC75F9E0FA10E9876 /* Pods-TranslateAppArc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateAppArc.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateAppArc/Pods-TranslateAppArc.release.xcconfig"; sourceTree = "<group>"; };
+		EA0E727F2244DCCA003C68B7 /* ChooseLanguagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesPresenter.swift; sourceTree = "<group>"; };
+		EA0E72802244DCCA003C68B7 /* ChooseLanguagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesWorker.swift; sourceTree = "<group>"; };
+		EA0E72812244DCCA003C68B7 /* ChooseLanguagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesRouter.swift; sourceTree = "<group>"; };
+		EA0E72822244DCCA003C68B7 /* ChooseLanguagesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesModels.swift; sourceTree = "<group>"; };
+		EA0E72832244DCCA003C68B7 /* ChooseLanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesViewController.swift; sourceTree = "<group>"; };
+		EA0E72842244DCCA003C68B7 /* ChooseLanguagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesInteractor.swift; sourceTree = "<group>"; };
+		EA0E728C2244F881003C68B7 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		EA0E728F2244FD6B003C68B7 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		EA0E72912244FDA6003C68B7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		EA2F79C022423F8900DAF50A /* TranslateAppArc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslateAppArc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2F79C322423F8900DAF50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA2F79C822423F8900DAF50A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +97,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EA0E727E2244DC0F003C68B7 /* ChooseLanguages */ = {
+			isa = PBXGroup;
+			children = (
+				EA0E727F2244DCCA003C68B7 /* ChooseLanguagesPresenter.swift */,
+				EA0E72802244DCCA003C68B7 /* ChooseLanguagesWorker.swift */,
+				EA0E72812244DCCA003C68B7 /* ChooseLanguagesRouter.swift */,
+				EA0E72822244DCCA003C68B7 /* ChooseLanguagesModels.swift */,
+				EA0E72832244DCCA003C68B7 /* ChooseLanguagesViewController.swift */,
+				EA0E72842244DCCA003C68B7 /* ChooseLanguagesInteractor.swift */,
+			);
+			path = ChooseLanguages;
+			sourceTree = "<group>";
+		};
+		EA0E728B2244F84B003C68B7 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				EA0E728C2244F881003C68B7 /* Storage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		EA0E728E2244F97D003C68B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA0E728F2244FD6B003C68B7 /* Languages.swift */,
+				EA0E72912244FDA6003C68B7 /* Language.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EA2F79B722423F8900DAF50A = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				EA2F79C322423F8900DAF50A /* AppDelegate.swift */,
+				EA0E728B2244F84B003C68B7 /* Storage */,
 				EA811AF02243951C00DB6312 /* Networking */,
+				EA0E728E2244F97D003C68B7 /* Models */,
 				EA811AE222438F0800DB6312 /* Modules */,
 				EA811AFB2243D6BC00DB6312 /* Extensions */,
 				EA2F79D52242400800DAF50A /* Supporting Files */,
@@ -135,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				EA811AE322438F1300DB6312 /* TextTranslator */,
+				EA0E727E2244DC0F003C68B7 /* ChooseLanguages */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -333,16 +384,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0E72882244DCCA003C68B7 /* ChooseLanguagesModels.swift in Sources */,
 				EA2F79C422423F8900DAF50A /* AppDelegate.swift in Sources */,
+				EA0E72892244DCCA003C68B7 /* ChooseLanguagesViewController.swift in Sources */,
+				EA0E72872244DCCA003C68B7 /* ChooseLanguagesRouter.swift in Sources */,
+				EA0E72852244DCCA003C68B7 /* ChooseLanguagesPresenter.swift in Sources */,
+				EA0E72922244FDA6003C68B7 /* Language.swift in Sources */,
 				EA811AF32243955300DB6312 /* GoogleClient.swift in Sources */,
 				EA811AEC22438F2B00DB6312 /* TextTranslatorRouter.swift in Sources */,
 				EA811AED22438F2B00DB6312 /* TextTranslatorModels.swift in Sources */,
 				EA811AEE22438F2B00DB6312 /* TextTranslatorViewController.swift in Sources */,
 				EA811AEA22438F2B00DB6312 /* TextTranslatorPresenter.swift in Sources */,
 				EA811AEB22438F2B00DB6312 /* TextTranslatorWorker.swift in Sources */,
+				EA0E72862244DCCA003C68B7 /* ChooseLanguagesWorker.swift in Sources */,
 				EA811AEF22438F2B00DB6312 /* TextTranslatorInteractor.swift in Sources */,
+				EA0E728A2244DCCA003C68B7 /* ChooseLanguagesInteractor.swift in Sources */,
 				EA811AFD2243D6EA00DB6312 /* UIColor+Extensions.swift in Sources */,
+				EA0E728D2244F881003C68B7 /* Storage.swift in Sources */,
 				EA811AF52243ADF200DB6312 /* Constants.swift in Sources */,
+				EA0E72902244FD6B003C68B7 /* Languages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

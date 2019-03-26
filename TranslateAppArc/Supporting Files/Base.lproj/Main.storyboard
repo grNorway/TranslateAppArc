@@ -58,6 +58,9 @@
                                                 <state key="normal" title="Choose language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="getLanguages:" destination="6Di-cJ-jXZ" eventType="touchUpInside" id="ca0-eE-bk8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTI-Ys-omU">
                                                 <rect key="frame" x="156.66666666666666" y="0.0" width="30" height="44"/>
@@ -72,6 +75,9 @@
                                                 <state key="normal" title="Choose language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="getLanguages:" destination="6Di-cJ-jXZ" eventType="touchUpInside" id="Zge-MK-7fx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -188,16 +194,17 @@
                         <outlet property="fromTextToTranslate" destination="W7H-d9-8Re" id="QjU-q8-ahJ"/>
                         <outlet property="toLangLabel" destination="hDz-IG-5Eb" id="BiQ-ra-Jnl"/>
                         <outlet property="toTextToTranslate" destination="HUX-vQ-Cwm" id="5aL-jW-hrX"/>
+                        <segue destination="M2d-XM-Xlf" kind="show" identifier="toChooseLanguagesViewController" id="LhB-59-sCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSp-5O-rW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-322.39999999999998" y="-473.64532019704433"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Languages View Controller-->
         <scene sceneID="vNb-wS-Ovy">
             <objects>
-                <viewController id="M2d-XM-Xlf" sceneMemberID="viewController">
+                <viewController id="M2d-XM-Xlf" customClass="ChooseLanguagesViewController" customModule="TranslateAppArc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zbe-nf-3FP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,25 +216,24 @@
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-XV-hAt">
-                                                <rect key="frame" x="0.0" y="0.0" width="148.66666666666666" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="169.66666666666666" height="44"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                                 <state key="normal" title="Choose Language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j62-2u-QmP">
-                                                <rect key="frame" x="160.66666666666666" y="0.0" width="30" height="44"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="JmW-2F-WOm"/>
-                                                </constraints>
-                                                <state key="normal" image="icnSwitch"/>
+                                                <connections>
+                                                    <action selector="fromLanguageButton:" destination="M2d-XM-Xlf" eventType="touchUpInside" id="fXn-Rb-Obg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-9D-oCw">
-                                                <rect key="frame" x="202.66666666666663" y="0.0" width="148.33333333333337" height="44"/>
+                                                <rect key="frame" x="181.66666666666663" y="0.0" width="169.33333333333337" height="44"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="15"/>
                                                 <state key="normal" title="Choose Language">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.29803921570000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="toLanguageButton:" destination="M2d-XM-Xlf" eventType="touchUpInside" id="25D-QD-aXC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -250,7 +256,7 @@
                                 <rect key="frame" x="0.0" y="201" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="languageCell" id="mHz-p8-nkn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="fromLanguageCell" id="mHz-p8-nkn">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mHz-p8-nkn" id="otJ-4I-BOQ">
@@ -259,12 +265,33 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M2d-XM-Xlf" id="y7w-yv-7mJ"/>
+                                    <outlet property="delegate" destination="M2d-XM-Xlf" id="Kjp-Jv-Vne"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gKo-wb-8Dc">
+                                <rect key="frame" x="0.0" y="201" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toLanguageCell" id="yyX-LQ-Otr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yyX-LQ-Otr" id="uzG-1p-KAj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M2d-XM-Xlf" id="OvK-WV-8Hk"/>
+                                    <outlet property="delegate" destination="M2d-XM-Xlf" id="fJL-Mo-jkL"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-3Z-Zdb">
-                                <rect key="frame" x="16" y="172" width="116" height="21"/>
+                                <rect key="frame" x="16" y="172" width="65.333333333333329" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="WIL-di-VXS"/>
-                                    <constraint firstAttribute="width" constant="116" id="l86-uw-MYH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -273,18 +300,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="trailing" secondItem="esl-s1-VCq" secondAttribute="trailing" id="469-Dl-0Kc"/>
                             <constraint firstItem="xnr-rS-PJz" firstAttribute="top" secondItem="esl-s1-VCq" secondAttribute="top" constant="71" id="7Lc-7N-DUd"/>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="top" secondItem="KzC-PN-esq" secondAttribute="top" id="9im-Ta-oH2"/>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="firstBaseline" secondItem="KzC-PN-esq" secondAttribute="firstBaseline" id="AA8-mk-SMI"/>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="centerY" secondItem="KzC-PN-esq" secondAttribute="centerY" id="Bh5-eH-UWE"/>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" id="FhH-t9-wSY"/>
                             <constraint firstItem="xnr-rS-PJz" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" constant="12" id="Ipc-NX-fEU"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="top" secondItem="KyT-3Z-Zdb" secondAttribute="bottom" constant="8" id="QNO-FA-Ufe"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="bottom" secondItem="esl-s1-VCq" secondAttribute="bottom" id="S8n-dC-1lR"/>
                             <constraint firstItem="KyT-3Z-Zdb" firstAttribute="top" secondItem="xnr-rS-PJz" secondAttribute="bottom" constant="13" id="WNe-Pf-uMV"/>
                             <constraint firstItem="esl-s1-VCq" firstAttribute="trailing" secondItem="xnr-rS-PJz" secondAttribute="trailing" constant="12" id="YsN-Dc-aD8"/>
+                            <constraint firstItem="gKo-wb-8Dc" firstAttribute="bottom" secondItem="KzC-PN-esq" secondAttribute="bottom" id="fgP-z5-mHF"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" id="lk9-5Y-yAA"/>
                             <constraint firstItem="KyT-3Z-Zdb" firstAttribute="leading" secondItem="esl-s1-VCq" secondAttribute="leading" constant="16" id="n5b-Zp-gvy"/>
                             <constraint firstItem="KzC-PN-esq" firstAttribute="trailing" secondItem="esl-s1-VCq" secondAttribute="trailing" id="wHZ-xW-Y11"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="esl-s1-VCq"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonLangViewContainer" destination="xnr-rS-PJz" id="fbx-P7-xk7"/>
+                        <outlet property="fromChooseLangBtn" destination="SC7-XV-hAt" id="c7T-5Z-fr1"/>
+                        <outlet property="fromTableView" destination="KzC-PN-esq" id="jdK-5T-dGJ"/>
+                        <outlet property="toChooseLangBtn" destination="H2r-9D-oCw" id="KvB-Qr-wTG"/>
+                        <outlet property="toTableView" destination="gKo-wb-8Dc" id="Mi7-B9-KLF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEV-L3-G5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

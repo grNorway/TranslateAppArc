@@ -60,9 +60,8 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
+      if let router = router {
+        router.routeToSomewhere(segue: segue)
       }
     }
   }
@@ -111,8 +110,10 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
         }
     }
     
-//  func displaySomething(viewModel: TextTranslator.Something.ViewModel)
-//  {
-//    //nameTextField.text = viewModel.name
-//  }
+    //MARK: - Actions
+    
+    @IBAction func getLanguages(_ sender: UIButton) {
+        performSegue(withIdentifier: "toChooseLanguagesViewController", sender: nil)
+    }
+    
 }

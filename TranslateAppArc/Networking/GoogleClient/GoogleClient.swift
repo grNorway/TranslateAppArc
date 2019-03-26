@@ -20,12 +20,14 @@ class GoogleClient {
         static let pathLanguages = "language/translate/v2/languages"
         
         case getTranslation(String,String,String)
+        case getLanguages
         
         
         var stringValue : String {
             switch self {
                 //https://translation.googleapis.com/language/translate/v2?target=co&q=Hello&source=en&key=AIzaSyB9KgxiWouUxpXcx4fzC0Tjkkvst4_NPpI
             case .getTranslation(let q,let target,let source) : return Endpoints.base + Endpoints.pathTranslations + Endpoints.apiKeyParam + "&q=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&target=\(target.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&source=\(source.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+            case .getLanguages : return Endpoints.base + Endpoints.pathLanguages + Endpoints.apiKeyParam + "&target=en"
             }
         }
         
@@ -57,7 +59,7 @@ class GoogleClient {
             print(url)
             
             guard error == nil else {
-                print("Error Request")
+                print("Error On Internet Request")
                 completion(nil,error!)
                 return
             }
