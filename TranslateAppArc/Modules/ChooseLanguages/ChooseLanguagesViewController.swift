@@ -91,6 +91,7 @@ class ChooseLanguagesViewController: UIViewController, ChooseLanguagesDisplayLog
     super.viewDidLoad()
     
     setupUI()
+    //TODO: scroll to selected indexPath
     setupButtonsContainer(container: buttonLangViewContainer)
     setupTitleForChooseLanguageButtons()
     

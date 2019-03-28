@@ -15,22 +15,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Camera-->
-        <scene sceneID="Hkl-ZL-MJ4">
-            <objects>
-                <viewController id="zz2-cE-1ZI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V4a-U2-J1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tPH-cO-cjh"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Camera" image="icPhotoCameraActive" id="4At-1O-65v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sb-ck-UGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-321" y="192"/>
-        </scene>
         <!--Text-->
         <scene sceneID="vvg-4F-HbK">
             <objects>
@@ -199,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSp-5O-rW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322.39999999999998" y="-473.64532019704433"/>
+            <point key="canvasLocation" x="-330" y="-635"/>
         </scene>
         <!--Choose Languages View Controller-->
         <scene sceneID="vNb-wS-Ovy">
@@ -291,7 +275,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-3Z-Zdb">
-                                <rect key="frame" x="16" y="172" width="65.333333333333329" height="21"/>
+                                <rect key="frame" x="16" y="172" width="69" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="WIL-di-VXS"/>
                                 </constraints>
@@ -343,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEV-L3-G5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="-474.38423645320199"/>
+            <point key="canvasLocation" x="593" y="-635"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aCH-wR-g8G">
@@ -359,16 +343,25 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Di-cJ-jXZ" kind="relationship" relationship="viewControllers" id="Xhm-gK-ZZg"/>
-                        <segue destination="zz2-cE-1ZI" kind="relationship" relationship="viewControllers" id="guc-Bl-TPN"/>
+                        <segue destination="m9r-gP-gEj" kind="relationship" relationship="viewControllers" id="Bcw-GZ-zG0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AE-1k-qJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1273" y="-141"/>
+            <point key="canvasLocation" x="-1194" y="-334"/>
+        </scene>
+        <!--CameraController-->
+        <scene sceneID="nry-vC-Vq1">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CameraController" storyboardName="CameraTranslator" referencedIdentifier="CameraController" id="m9r-gP-gEj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="OMM-RT-ja4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7a3-SN-Cgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-277" y="-94"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icPhotoCameraActive" width="26" height="23"/>
         <image name="icnSwitch" width="14" height="18"/>
         <image name="icnTextActive" width="24" height="24"/>
         <image name="translate" width="114" height="20"/>
