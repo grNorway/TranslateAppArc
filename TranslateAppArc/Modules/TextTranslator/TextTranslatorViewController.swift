@@ -76,7 +76,6 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
     @IBOutlet weak var middleLineSepperator: UIView!
     @IBOutlet weak var toStackView: UIStackView!
     
-    
     @IBOutlet weak var FromChooseLangBtn: UIButton!
     @IBOutlet weak var ToChooseLangBtn: UIButton!
     @IBOutlet weak var changeLangFromToBtn: UIButton!
@@ -92,8 +91,6 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
         case normal
         case fullScreen
     }
-    
-    
     
     var toTextViewState : ToTextViewState = .noChanges
     
@@ -264,6 +261,7 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
         toTextToTranslate.text = ""
         fromTextViewPlaceholder.isHidden = false
         toTextViewPlaceholder.isHidden = false
+        self.detectedText = ""
     }
     
     @objc private func cancelTranslation(){
