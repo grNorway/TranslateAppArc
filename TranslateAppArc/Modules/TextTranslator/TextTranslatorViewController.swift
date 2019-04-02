@@ -12,6 +12,12 @@
 
 import UIKit
 
+enum ToTextViewState {
+    case noChanges
+    case erase
+    
+}
+
 protocol TextTranslatorDisplayLogic: class
 {
   //func displaySomething(viewModel: TextTranslator.Something.ViewModel)
@@ -66,55 +72,106 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
     }
   }
     //MARK: - Outlets
+    @IBOutlet weak var fromStackView: UIStackView!
+    @IBOutlet weak var middleLineSepperator: UIView!
+    @IBOutlet weak var toStackView: UIStackView!
+    
     
     @IBOutlet weak var FromChooseLangBtn: UIButton!
     @IBOutlet weak var ToChooseLangBtn: UIButton!
     @IBOutlet weak var changeLangFromToBtn: UIButton!
-    
     @IBOutlet weak var fromLangLabel: UILabel!
     @IBOutlet weak var toLangLabel: UILabel!
-    
     @IBOutlet weak var fromTextToTranslate: UITextView!
     @IBOutlet weak var toTextToTranslate: UITextView!
     @IBOutlet weak var buttonLangViewContainer: UIView!
+    @IBOutlet weak var translateButton: UIButton!
     
     //MARK: - Properties
+    enum ToTextViewSizeType {
+        case normal
+        case fullScreen
+    }
+    
+    
+    
+    var toTextViewState : ToTextViewState = .noChanges
     
     var fromSelectedLanguage : Language?
     var toSelectedLanguage : Language?
     var languages : [Language]?
-  
+    var detectedText : String?
+    var fromTextViewPlaceholder = UILabel(frame: CGRect(x: 5, y: 7, width: 300, height: 20))
+    var toTextViewPlaceholder = UILabel(frame: CGRect(x: 5, y: 7, width: 300, height: 20))
+    
+    let fromTextToTranslateDelegate = FromTextToTranslateDelegate()
+    let toTextToTranslateDelegate = ToTextToTranslateDelegate()
+    
+    var toTextViewSize: ToTextViewSizeType = .normal
+    var doubleTapGestureRecognizer : UITapGestureRecognizer!
+    
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
+  override func viewDidLoad(){
     super.viewDidLoad()
+    
+    doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleToTextViewSize(sender:)))
+    doubleTapGestureRecognizer.numberOfTapsRequired = 2
+    toTextToTranslate.isUserInteractionEnabled = false
     setupButtonsContainer(container: buttonLangViewContainer)
-    doSomething()
+    addPlaceholderFromTextToTranslate()
+    addPlaceholdertoTextToTranslate()
+    addToolBarOnKeyboard()
+    buttonUISelected(button: translateButton)
+    toTextToTranslate.inputView = UIView()
+    translateButton.isHidden = true
+    fromTextToTranslateDelegate.delegate = self
+    fromTextToTranslate.delegate = fromTextToTranslateDelegate
+    
+    toTextToTranslateDelegate.delegate = self
+    toTextToTranslate.delegate = toTextToTranslateDelegate
   }
-  
-  
-  
-  func doSomething()
-  {
-    interactor?.getTranslation(sourceLang: "En", targetLang: "co", qText: "Hello")
-//    let request = TextTranslator.Something.Request()
-    //interactor?.doSomething(request: request)
-  }
-    func updateTranslatedText(translatedText: String,error: String?){
-        DispatchQueue.main.async {
-            self.toTextToTranslate.text = translatedText
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let detectedText = self.detectedText{
+            if detectedText == "" {
+                return
+            }
+            fromTextToTranslate.text = detectedText
+            fromTextToTranslate.delegate?.textViewDidChange!(fromTextToTranslate)
+            switch toTextViewState{
+            case .noChanges:
+                break
+            case .erase:
+                toTextToTranslate.text = ""
+                toTextToTranslate.delegate?.textViewDidChange!(toTextToTranslate)
+                toTextViewState = .noChanges
+            }
+            
+            translateButton.isHidden = false
         }
+        
+    }
+
+    func updateTranslatedText(translatedText: String,error: String?){
         
         if let error = error {
             print("Error : \(error)")
+            return
         }
+        
+        DispatchQueue.main.async {
+            self.toTextToTranslate.text = ""
+            self.toTextToTranslate.insertText(translatedText)
+        }
+        
     }
     
     //MARK: - Actions
     
     @IBAction func getLanguages(_ sender: UIButton) {
-        
         performSegue(withIdentifier: "toChooseLanguagesViewController", sender: sender.tag)
     }
     
@@ -122,20 +179,156 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
         
         if let fromSelectedLanguage = fromSelectedLanguage{
             self.fromSelectedLanguage = fromSelectedLanguage
+            fromLangLabel.text = "From: \(fromSelectedLanguage.name)"
             FromChooseLangBtn.setTitle(fromSelectedLanguage.name, for: .normal)
         }
         
         if let toSelectedlanguage = toSelectedlanguage{
             self.toSelectedLanguage = toSelectedlanguage
+            toLangLabel.text = "To: \(toSelectedlanguage.name)"
             ToChooseLangBtn.setTitle(toSelectedlanguage.name, for: .normal)
         }
         
         if let languages = languages {
             self.languages = languages
         }
+  
+    }
+    @IBAction func toggleLanguages(_ sender: UIButton) {
         
+        let tempLang = fromSelectedLanguage
+        fromSelectedLanguage = toSelectedLanguage
+        toSelectedLanguage = tempLang
+        
+        updateControllerWithChanges(fromSelectedLanguage: fromSelectedLanguage, toSelectedlanguage: toSelectedLanguage, languages: nil)
         
     }
     
+    @IBAction func translateTextButtonPressed(_ sender: UIButton) {
+        translateText()
+    }
+    
+    //MARK: - Selectors
+    
+    @objc func toggleToTextViewSize(sender : UITapGestureRecognizer){
+        switch toTextViewSize{
+        case .normal:
+            fromStackView.isHidden = false
+            middleLineSepperator.isHidden = false
+            toTextViewSize = .fullScreen
+        case .fullScreen:
+           fromStackView.isHidden = true
+            middleLineSepperator.isHidden = true
+            toTextViewSize = .normal
+        }
+    }
+    
+    //MARK: - Helper functions
+    
+    private func addToolBarOnKeyboard(){
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        toolBar.barStyle = .default
+        toolBar.tintColor = UIColor(red:0.95, green:0.3, blue:0.36, alpha:1)
+        toolBar.items = [UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: #selector(cancelTranslation)),
+                         UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearText)),
+                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+                         UIBarButtonItem(title: "Translate", style: .done, target: self, action: #selector(translateText))
+        ]
+        toolBar.sizeToFit()
+        fromTextToTranslate.inputAccessoryView = toolBar
+    }
+    
+    @objc private func translateText(){
+        
+        guard let fromSelectedLanguage = fromSelectedLanguage else {
+            alertController(title: "Error", msg: "Please Select From which language to translate")
+            return
+        }
+        
+        guard let toSelectedLanguage = toSelectedLanguage else{
+            alertController(title: "Error", msg: "Please Select To which language to translate")
+            return
+        }
+        
+        guard !fromTextToTranslate.text.isEmpty else{
+            alertController(title: "Error", msg: "Please enter the text you want to translate")
+            return
+        }
+        fromTextToTranslate.resignFirstResponder()
+        interactor?.getTranslation(sourceLang: fromSelectedLanguage.languageCode, targetLang: toSelectedLanguage.languageCode, qText: fromTextToTranslate.text)
+        
+    }
+    
+    @objc private func clearText(){
+        fromTextToTranslate.text = ""
+        toTextToTranslate.text = ""
+        fromTextViewPlaceholder.isHidden = false
+        toTextViewPlaceholder.isHidden = false
+    }
+    
+    @objc private func cancelTranslation(){
+        fromTextToTranslate.resignFirstResponder()
+    }
+    
+    private func addPlaceholderFromTextToTranslate(){
+        fromTextViewPlaceholder.text = "Enter Your Text Here"
+        fromTextViewPlaceholder.font = UIFont(name: "SFProDisplay-Semibold", size: 18)!
+        fromTextViewPlaceholder.textColor = UIColor(red: 221/256, green: 221/256, blue: 226/256, alpha: 1)
+        fromTextToTranslate.addSubview(fromTextViewPlaceholder)
+    }
+    
+    private func addPlaceholdertoTextToTranslate(){
+        toTextViewPlaceholder.text = "Translated Text will be show up here"
+        toTextViewPlaceholder.font = UIFont(name: "SFProDisplay-Semibold", size: 18)!
+        toTextViewPlaceholder.textColor = UIColor(red: 221/256, green: 221/256, blue: 226/256, alpha: 1)
+        toTextToTranslate.addSubview(toTextViewPlaceholder)
+    }
+    
+    fileprivate func addRemoveDoubleTapGesture(_ text: String) {
+        if !text.isEmpty{
+            toTextToTranslate.addGestureRecognizer(doubleTapGestureRecognizer)
+        }else{
+            toTextToTranslate.removeGestureRecognizer(doubleTapGestureRecognizer)
+        }
+    }
+    
 }
+
+
+extension TextTranslatorViewController : FromTextToTranslateDelegateProtocol{
+    func updateUItextViewDidChange(text: String) {
+        addRemoveDoubleTapGesture(text)
+        
+        fromTextViewPlaceholder.isHidden = !text.isEmpty
+        
+        if text.isEmpty {
+            toTextToTranslate.text = ""
+            toTextToTranslate.delegate?.textViewDidChange!(toTextToTranslate)
+        }
+        
+        translateButton.isHidden = text.isEmpty
+    }
+}
+
+extension TextTranslatorViewController : ToTextToTranslateDelegateProtocol{
+    func updateUITexViewDidChange(text: String) {
+        toTextViewPlaceholder.isHidden = !text.isEmpty
+        toTextToTranslate.isUserInteractionEnabled = !text.isEmpty
+        if !text.isEmpty{
+            UIView.animate(withDuration: 0.5) {
+                self.toTextToTranslate.backgroundColor = UIColor.translationRed
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.toTextToTranslate.backgroundColor = UIColor.white
+                })
+            }
+        }
+    }
+    
+    
+}
+
+
+
+
+
 

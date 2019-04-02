@@ -83,6 +83,7 @@ class ChooseLanguagesViewController: UIViewController, ChooseLanguagesDisplayLog
     var toSelectedLanguage : Language?
     var delegate : ChooseLanguageViewControllerDelegate?
     var buttonTag : Int?
+    var errorMessage: String!
     
   // MARK: View lifecycle
   
@@ -101,8 +102,14 @@ class ChooseLanguagesViewController: UIViewController, ChooseLanguagesDisplayLog
     
     func displayLanguages(languages: [Language], error: Error?) {
         guard error == nil else{
-            //Present Alert Controller
-            print("Error Getting the languages : \(String(describing: error?.localizedDescription))")
+            
+            DispatchQueue.main.async {
+                self.alertController(title: "Error", msg: "\(error!.localizedDescription)")
+                self.errorMessage = error!.localizedDescription
+                self.fromTableView.reloadData()
+                self.toTableView.reloadData()
+            }
+            
             return
         }
         
@@ -210,7 +217,7 @@ extension ChooseLanguagesViewController : UITableViewDataSource {
         if let languages = languages{
             return languages.count
         }else{
-            return 0
+            return 1
         }
     }
     
@@ -234,7 +241,15 @@ extension ChooseLanguagesViewController : UITableViewDataSource {
                 return cell
             }
         }else{
-            return UITableViewCell()
+            if tableView == fromTableView{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "fromLanguageCell", for: indexPath)
+                cell.textLabel?.text = errorMessage
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "toLanguageCell", for: indexPath)
+                cell.textLabel?.text = errorMessage
+                return cell
+            }
         }
         
     }

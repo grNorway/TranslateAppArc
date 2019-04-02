@@ -40,6 +40,7 @@ class ChooseLanguagesInteractor: ChooseLanguagesBusinessLogic, ChooseLanguagesDa
             
             if let error = error as NSError?{
                 print("Error Get Languages: \(error)")
+                self.presenter?.presentLanguages(languages: [], error: error)
             }else{
                 if let response = response{
                     self.languages = response.data.languages

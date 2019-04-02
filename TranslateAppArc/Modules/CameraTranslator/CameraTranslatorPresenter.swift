@@ -15,6 +15,7 @@ import UIKit
 protocol CameraTranslatorPresentationLogic
 {
     func presentLatestImage(image : UIImage)
+    func presentDetectedText(detectedText: String?,error: Error?)
 }
 
 class CameraTranslatorPresenter: CameraTranslatorPresentationLogic
@@ -23,9 +24,15 @@ class CameraTranslatorPresenter: CameraTranslatorPresentationLogic
   
   // MARK: Do something
   
-    func presentLatestImage(image:UIImage)
-  {
+    func presentLatestImage(image:UIImage){
+        viewController?.presentLatestImage(image: image)
+    }
     
-    viewController?.presentLatestImage(image: image)
-  }
+    func presentDetectedText(detectedText: String?,error:Error?) {
+        if error != nil {
+            viewController?.presentDetectedText(detectedText: nil, error: error)
+        }else{
+            viewController?.presentDetectedText(detectedText: detectedText, error: nil)
+        }
+    }
 }

@@ -23,4 +23,22 @@ class CameraTranslatorWorker
             
         }
     }
+    
+    let visionController = VisionController()
+    
+    func detectText(from image:UIImage,detectionModel:DetectionModelType,completion: @escaping (String?,Error?) -> ()){
+        visionController.detectText(image: image, detectionModel: detectionModel) { (detectedText, error) in
+            
+            guard error == nil else {
+                completion(nil,error!)
+                return
+            }
+            
+            if let detectedText = detectedText{
+                completion(detectedText,nil)
+            }
+            
+        }
+    }
+    
 }

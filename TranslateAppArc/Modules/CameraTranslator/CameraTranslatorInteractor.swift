@@ -16,6 +16,7 @@ protocol CameraTranslatorBusinessLogic
 {
   //func doSomething(request: CameraTranslator.Something.Request)
     func getLatestPhoto(for target : UIImageView)
+    func detectText(for image:UIImage,detectionModel:DetectionModelType)
 }
 
 protocol CameraTranslatorDataStore
@@ -41,6 +42,24 @@ class CameraTranslatorInteractor: CameraTranslatorBusinessLogic, CameraTranslato
             self.presenter?.presentLatestImage(image: image)
         })
     }
+    
+    func detectText(for image: UIImage,detectionModel:DetectionModelType) {
+        worker = CameraTranslatorWorker()
+        var image = image
+        if detectionModel == .onDevice {
+            if let imageRedused = image.resizeWithPercent(percentage: 0.7){
+                image = imageRedused
+            }
+        }
+        worker?.detectText(from: image, detectionModel: detectionModel, completion: { (detectedText, error) in
+            if error != nil {
+                self.presenter?.presentDetectedText(detectedText: nil, error: error)
+            }else{
+                self.presenter?.presentDetectedText(detectedText: detectedText, error: nil)
+            }
+        })
+    }
+    
     
 //  func doSomething(request: CameraTranslator.Something.Request)
 //  {

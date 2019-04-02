@@ -21,6 +21,10 @@
 		EA2F79CE22423F8A00DAF50A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2F79CC22423F8A00DAF50A /* LaunchScreen.storyboard */; };
 		EA2F79DB22424C8700DAF50A /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA2F79D922424C6C00DAF50A /* SF-Pro-Display-Regular.otf */; };
 		EA2F79DC22424C8B00DAF50A /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA2F79DA22424C7E00DAF50A /* SF-Pro-Display-Semibold.otf */; };
+		EA5F18A4224E22F70012D8D0 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5F18A3224E22F70012D8D0 /* UILabel+Extensions.swift */; };
+		EA7C4225224D008200EA9620 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA7C4224224D008200EA9620 /* GoogleService-Info.plist */; };
+		EA7C4228224D021500EA9620 /* VisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7C4227224D021500EA9620 /* VisionController.swift */; };
+		EA7C422A224D192000EA9620 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7C4229224D192000EA9620 /* UIImage+Extensions.swift */; };
 		EA811AEA22438F2B00DB6312 /* TextTranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AE422438F2B00DB6312 /* TextTranslatorPresenter.swift */; };
 		EA811AEB22438F2B00DB6312 /* TextTranslatorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AE522438F2B00DB6312 /* TextTranslatorWorker.swift */; };
 		EA811AEC22438F2B00DB6312 /* TextTranslatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AE622438F2B00DB6312 /* TextTranslatorRouter.swift */; };
@@ -28,7 +32,6 @@
 		EA811AEE22438F2B00DB6312 /* TextTranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AE822438F2B00DB6312 /* TextTranslatorViewController.swift */; };
 		EA811AEF22438F2B00DB6312 /* TextTranslatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AE922438F2B00DB6312 /* TextTranslatorInteractor.swift */; };
 		EA811AF32243955300DB6312 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AF22243955300DB6312 /* GoogleClient.swift */; };
-		EA811AF72243B6CC00DB6312 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */; };
 		EA811AFD2243D6EA00DB6312 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */; };
 		EAA33272224A530E000196AC /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA33271224A530E000196AC /* UIViewController+Extensions.swift */; };
 		EAA33275224A6E15000196AC /* CameraTranslator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA33274224A6E15000196AC /* CameraTranslator.storyboard */; };
@@ -40,6 +43,9 @@
 		EACC6B1D224B76CF003FCC7A /* CameraTranslatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC6B17224B76CF003FCC7A /* CameraTranslatorInteractor.swift */; };
 		EACC6B20224B77EF003FCC7A /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC6B1F224B77EF003FCC7A /* CameraController.swift */; };
 		EACC6B25224BA988003FCC7A /* PhotosLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACC6B24224BA988003FCC7A /* PhotosLibrary.swift */; };
+		EAD6368C2251F3D2003B2759 /* FromTextToTranslateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6368B2251F3D2003B2759 /* FromTextToTranslateDelegate.swift */; };
+		EAD6368E225202AE003B2759 /* ToTextToTranslateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6368D225202AE003B2759 /* ToTextToTranslateDelegate.swift */; };
+		EAD636902252416E003B2759 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6368F2252416E003B2759 /* MyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +67,10 @@
 		EA2F79CF22423F8A00DAF50A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA2F79D922424C6C00DAF50A /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		EA2F79DA22424C7E00DAF50A /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		EA5F18A3224E22F70012D8D0 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		EA7C4224224D008200EA9620 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA7C4227224D021500EA9620 /* VisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionController.swift; sourceTree = "<group>"; };
+		EA7C4229224D192000EA9620 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		EA811AE422438F2B00DB6312 /* TextTranslatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslatorPresenter.swift; sourceTree = "<group>"; };
 		EA811AE522438F2B00DB6312 /* TextTranslatorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslatorWorker.swift; sourceTree = "<group>"; };
 		EA811AE622438F2B00DB6312 /* TextTranslatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslatorRouter.swift; sourceTree = "<group>"; };
@@ -68,7 +78,6 @@
 		EA811AE822438F2B00DB6312 /* TextTranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslatorViewController.swift; sourceTree = "<group>"; };
 		EA811AE922438F2B00DB6312 /* TextTranslatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTranslatorInteractor.swift; sourceTree = "<group>"; };
 		EA811AF22243955300DB6312 /* GoogleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
-		EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EAA33271224A530E000196AC /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		EAA33274224A6E15000196AC /* CameraTranslator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraTranslator.storyboard; sourceTree = "<group>"; };
@@ -80,6 +89,9 @@
 		EACC6B17224B76CF003FCC7A /* CameraTranslatorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTranslatorInteractor.swift; sourceTree = "<group>"; };
 		EACC6B1F224B77EF003FCC7A /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		EACC6B24224BA988003FCC7A /* PhotosLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLibrary.swift; sourceTree = "<group>"; };
+		EAD6368B2251F3D2003B2759 /* FromTextToTranslateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromTextToTranslateDelegate.swift; sourceTree = "<group>"; };
+		EAD6368D225202AE003B2759 /* ToTextToTranslateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToTextToTranslateDelegate.swift; sourceTree = "<group>"; };
+		EAD6368F2252416E003B2759 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +166,14 @@
 			isa = PBXGroup;
 			children = (
 				EA2F79C322423F8900DAF50A /* AppDelegate.swift */,
+				EAD6368F2252416E003B2759 /* MyTabBarController.swift */,
 				EA811AF02243951C00DB6312 /* Networking */,
 				EA0E728E2244F97D003C68B7 /* Models */,
 				EA811AE222438F0800DB6312 /* Modules */,
 				EA811AFB2243D6BC00DB6312 /* Extensions */,
 				EA2F79D52242400800DAF50A /* Supporting Files */,
 				EA2F79CF22423F8A00DAF50A /* Info.plist */,
-				EA811AF62243B6CC00DB6312 /* GoogleService-Info.plist */,
+				EA7C4224224D008200EA9620 /* GoogleService-Info.plist */,
 				EA2F79D822424C4A00DAF50A /* Resources */,
 			);
 			path = TranslateAppArc;
@@ -185,6 +198,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		EA5F18A5224E25030012D8D0 /* TextViewDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				EAD6368B2251F3D2003B2759 /* FromTextToTranslateDelegate.swift */,
+				EAD6368D225202AE003B2759 /* ToTextToTranslateDelegate.swift */,
+			);
+			path = TextViewDelegates;
+			sourceTree = "<group>";
+		};
+		EA7C4226224D020000EA9620 /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				EA7C4227224D021500EA9620 /* VisionController.swift */,
+			);
+			path = Vision;
+			sourceTree = "<group>";
+		};
 		EA811AE222438F0800DB6312 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +228,7 @@
 		EA811AE322438F1300DB6312 /* TextTranslator */ = {
 			isa = PBXGroup;
 			children = (
+				EA5F18A5224E25030012D8D0 /* TextViewDelegates */,
 				EA811AE422438F2B00DB6312 /* TextTranslatorPresenter.swift */,
 				EA811AE522438F2B00DB6312 /* TextTranslatorWorker.swift */,
 				EA811AE622438F2B00DB6312 /* TextTranslatorRouter.swift */,
@@ -229,6 +260,8 @@
 			children = (
 				EA811AFC2243D6EA00DB6312 /* UIColor+Extensions.swift */,
 				EAA33271224A530E000196AC /* UIViewController+Extensions.swift */,
+				EA7C4229224D192000EA9620 /* UIImage+Extensions.swift */,
+				EA5F18A3224E22F70012D8D0 /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -237,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				EACC6B11224B7630003FCC7A /* Storyboard */,
+				EA7C4226224D020000EA9620 /* Vision */,
 				EACC6B21224BA90B003FCC7A /* PhotosLibrary */,
 				EACC6B1E224B778A003FCC7A /* CameraController */,
 				EACC6B12224B76CF003FCC7A /* CameraTranslatorPresenter.swift */,
@@ -339,8 +373,8 @@
 				EA2F79DC22424C8B00DAF50A /* SF-Pro-Display-Semibold.otf in Resources */,
 				EAA33275224A6E15000196AC /* CameraTranslator.storyboard in Resources */,
 				EA2F79DB22424C8700DAF50A /* SF-Pro-Display-Regular.otf in Resources */,
+				EA7C4225224D008200EA9620 /* GoogleService-Info.plist in Resources */,
 				EA2F79C922423F8900DAF50A /* Main.storyboard in Resources */,
-				EA811AF72243B6CC00DB6312 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +470,7 @@
 				EACC6B18224B76CF003FCC7A /* CameraTranslatorPresenter.swift in Sources */,
 				EA0E72872244DCCA003C68B7 /* ChooseLanguagesRouter.swift in Sources */,
 				EACC6B1B224B76CF003FCC7A /* CameraTranslatorModels.swift in Sources */,
+				EAD636902252416E003B2759 /* MyTabBarController.swift in Sources */,
 				EACC6B20224B77EF003FCC7A /* CameraController.swift in Sources */,
 				EA0E72852244DCCA003C68B7 /* ChooseLanguagesPresenter.swift in Sources */,
 				EA0E72922244FDA6003C68B7 /* Language.swift in Sources */,
@@ -444,15 +479,20 @@
 				EA811AF32243955300DB6312 /* GoogleClient.swift in Sources */,
 				EA811AEC22438F2B00DB6312 /* TextTranslatorRouter.swift in Sources */,
 				EA811AED22438F2B00DB6312 /* TextTranslatorModels.swift in Sources */,
+				EAD6368E225202AE003B2759 /* ToTextToTranslateDelegate.swift in Sources */,
 				EACC6B1C224B76CF003FCC7A /* CameraTranslatorViewController.swift in Sources */,
 				EAA33272224A530E000196AC /* UIViewController+Extensions.swift in Sources */,
+				EAD6368C2251F3D2003B2759 /* FromTextToTranslateDelegate.swift in Sources */,
 				EACC6B1A224B76CF003FCC7A /* CameraTranslatorRouter.swift in Sources */,
 				EA811AEE22438F2B00DB6312 /* TextTranslatorViewController.swift in Sources */,
 				EA811AEA22438F2B00DB6312 /* TextTranslatorPresenter.swift in Sources */,
+				EA7C4228224D021500EA9620 /* VisionController.swift in Sources */,
+				EA5F18A4224E22F70012D8D0 /* UILabel+Extensions.swift in Sources */,
 				EA811AEB22438F2B00DB6312 /* TextTranslatorWorker.swift in Sources */,
 				EA0E72862244DCCA003C68B7 /* ChooseLanguagesWorker.swift in Sources */,
 				EA811AEF22438F2B00DB6312 /* TextTranslatorInteractor.swift in Sources */,
 				EA0E728A2244DCCA003C68B7 /* ChooseLanguagesInteractor.swift in Sources */,
+				EA7C422A224D192000EA9620 /* UIImage+Extensions.swift in Sources */,
 				EA811AFD2243D6EA00DB6312 /* UIColor+Extensions.swift in Sources */,
 				EACC6B19224B76CF003FCC7A /* CameraTranslatorWorker.swift in Sources */,
 			);

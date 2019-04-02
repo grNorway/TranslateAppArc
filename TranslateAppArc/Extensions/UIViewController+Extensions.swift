@@ -34,4 +34,11 @@ extension UIViewController {
         button.setTitleColor(UIColor.translationRed, for: .normal)
     }
     
+    func alertController(title: String,msg:String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let actionOK = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(actionOK)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
