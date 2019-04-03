@@ -296,7 +296,7 @@ class TextTranslatorViewController: UIViewController, TextTranslatorDisplayLogic
 extension TextTranslatorViewController : FromTextToTranslateDelegateProtocol{
     func updateUItextViewDidChange(text: String) {
         addRemoveDoubleTapGesture(text)
-        
+        self.detectedText = text
         fromTextViewPlaceholder.isHidden = !text.isEmpty
         
         if text.isEmpty {
