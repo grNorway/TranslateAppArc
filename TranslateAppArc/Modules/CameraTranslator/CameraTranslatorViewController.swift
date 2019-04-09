@@ -77,6 +77,7 @@ class CameraTranslatorViewController: UIViewController, CameraTranslatorDisplayL
     @IBOutlet weak var cameraButtonContainerView: UIView!
     @IBOutlet weak var ImagePreviewContainer: UIView!
     @IBOutlet weak var detectTextButton: UIButton!
+    @IBOutlet weak var OCRStackView: UIStackView!
     
     //MARK: - Properties
     
@@ -111,6 +112,9 @@ class CameraTranslatorViewController: UIViewController, CameraTranslatorDisplayL
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewPresentingIs(view: .captureView, imageTaken: nil)
+        
+        translationOnCloudButton.rounderRightCorners()
+        translationOnDeviceButton.roundedLeftCorners()
         
     }
     
@@ -280,8 +284,8 @@ class CameraTranslatorViewController: UIViewController, CameraTranslatorDisplayL
     }
     
     private func visionFrameworkButtonsUI(){
-        visionFrameworkButtonContainer.layer.cornerRadius = visionFrameworkButtonContainer.frame.height / 2
-        visionFrameworkButtonContainer.clipsToBounds = true
+//        visionFrameworkButtonContainer.layer.cornerRadius = visionFrameworkButtonContainer.frame.height / 2
+//        visionFrameworkButtonContainer.clipsToBounds = true
     }
     
     @IBAction func toggleTextDetectionButtons(){
@@ -289,14 +293,14 @@ class CameraTranslatorViewController: UIViewController, CameraTranslatorDisplayL
             selectedTextDetextion = .onCloud
             translationOnDeviceButton.setImage(UIImage(imageLiteralResourceName: "icnDeviceInActive"), for: .normal)
             translationOnCloudButton.setImage(UIImage(imageLiteralResourceName: "icCloudActive"), for: .normal)
-            translationOnDeviceButton.backgroundColor = .clear
+            translationOnDeviceButton.backgroundColor = UIColor.translationGray
             translationOnCloudButton.backgroundColor = UIColor.translationRed
         }else{
             selectedTextDetextion = .onDevice
             translationOnDeviceButton.setImage(UIImage(imageLiteralResourceName: "icnDeviceActive"), for: .normal)
             translationOnCloudButton.setImage(UIImage(imageLiteralResourceName: "icCloudInActive"), for: .normal)
             translationOnDeviceButton.backgroundColor = UIColor.translationRed
-            translationOnCloudButton.backgroundColor = UIColor.clear
+            translationOnCloudButton.backgroundColor = UIColor.translationGray
         }
     }
     

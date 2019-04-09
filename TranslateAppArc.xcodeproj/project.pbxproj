@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03FC0714A59FC1743E07C76B /* Pods_TranslateAppArc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AED7F97C4A3CB7355F1CFD1 /* Pods_TranslateAppArc.framework */; };
+		EA0BE0B1225CAAD90085B724 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0BE0B0225CAAD90085B724 /* UIButton+Extension.swift */; };
 		EA0E72852244DCCA003C68B7 /* ChooseLanguagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E727F2244DCCA003C68B7 /* ChooseLanguagesPresenter.swift */; };
 		EA0E72862244DCCA003C68B7 /* ChooseLanguagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72802244DCCA003C68B7 /* ChooseLanguagesWorker.swift */; };
 		EA0E72872244DCCA003C68B7 /* ChooseLanguagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0E72812244DCCA003C68B7 /* ChooseLanguagesRouter.swift */; };
@@ -52,6 +53,7 @@
 		61D682B200A309DA5D90F526 /* Pods-TranslateAppArc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateAppArc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateAppArc/Pods-TranslateAppArc.debug.xcconfig"; sourceTree = "<group>"; };
 		6AED7F97C4A3CB7355F1CFD1 /* Pods_TranslateAppArc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TranslateAppArc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4C0C8BC75F9E0FA10E9876 /* Pods-TranslateAppArc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TranslateAppArc.release.xcconfig"; path = "Pods/Target Support Files/Pods-TranslateAppArc/Pods-TranslateAppArc.release.xcconfig"; sourceTree = "<group>"; };
+		EA0BE0B0225CAAD90085B724 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		EA0E727F2244DCCA003C68B7 /* ChooseLanguagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesPresenter.swift; sourceTree = "<group>"; };
 		EA0E72802244DCCA003C68B7 /* ChooseLanguagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesWorker.swift; sourceTree = "<group>"; };
 		EA0E72812244DCCA003C68B7 /* ChooseLanguagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguagesRouter.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				EAA33271224A530E000196AC /* UIViewController+Extensions.swift */,
 				EA7C4229224D192000EA9620 /* UIImage+Extensions.swift */,
 				EA5F18A3224E22F70012D8D0 /* UILabel+Extensions.swift */,
+				EA0BE0B0225CAAD90085B724 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				EAD6368C2251F3D2003B2759 /* FromTextToTranslateDelegate.swift in Sources */,
 				EACC6B1A224B76CF003FCC7A /* CameraTranslatorRouter.swift in Sources */,
 				EA811AEE22438F2B00DB6312 /* TextTranslatorViewController.swift in Sources */,
+				EA0BE0B1225CAAD90085B724 /* UIButton+Extension.swift in Sources */,
 				EA811AEA22438F2B00DB6312 /* TextTranslatorPresenter.swift in Sources */,
 				EA7C4228224D021500EA9620 /* VisionController.swift in Sources */,
 				EA5F18A4224E22F70012D8D0 /* UILabel+Extensions.swift in Sources */,

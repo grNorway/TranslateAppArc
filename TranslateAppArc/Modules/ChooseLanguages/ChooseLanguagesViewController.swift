@@ -95,6 +95,8 @@ class ChooseLanguagesViewController: UIViewController, ChooseLanguagesDisplayLog
     //TODO: scroll to selected indexPath
     setupButtonsContainer(container: buttonLangViewContainer)
     setupTitleForChooseLanguageButtons()
+    fromTableView.allowsMultipleSelection = false
+    toTableView.allowsMultipleSelection = false
     
   }
 
@@ -181,13 +183,13 @@ extension ChooseLanguagesViewController : UITableViewDelegate {
         if tableView == fromTableView{
             guard let fromCell = tableView.cellForRow(at: indexPath) else { return }
             fromCell.accessoryType = .checkmark
-            fromCell.textLabel?.textColor = UIColor(red: 242/256, green: 76/256, blue: 92/256, alpha: 1)
+            fromCell.textLabel?.textColor = UIColor.translationRed
             fromSelectedLanguage = languages[indexPath.row]
             fromChooseLangBtn.setTitle(fromSelectedLanguage?.name, for: .normal)
-        }else{
+        }else if tableView == toTableView{
             guard let toCell = tableView.cellForRow(at: indexPath) else { return }
             toCell.accessoryType = .checkmark
-            toCell.textLabel?.textColor = UIColor(red: 242/256, green: 76/256, blue: 92/256, alpha: 1)
+            toCell.textLabel?.textColor = UIColor.translationRed
             toSelectedLanguage = languages[indexPath.row]
             toChooseLangBtn.setTitle(toSelectedLanguage?.name, for: .normal)
         }
@@ -200,14 +202,34 @@ extension ChooseLanguagesViewController : UITableViewDelegate {
             guard let fromCell = tableView.cellForRow(at: indexPath) else { return }
             fromCell.accessoryType = .none
             fromCell.textLabel?.textColor = .black
-            fromSelectedLanguage = nil
-        }else{
+            //fromSelectedLanguage = nil
+        }else if tableView == toTableView{
             guard let toCell = tableView.cellForRow(at: indexPath) else { return }
             toCell.accessoryType = .none
             toCell.textLabel?.textColor = .black
-            toSelectedLanguage = nil
+            //toSelectedLanguage = nil
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView == fromTableView {
+            if cell.isSelected {
+                cell.accessoryType = .checkmark
+                cell.textLabel?.textColor = UIColor.red
+            }else{
+                cell.accessoryType = .none
+                cell.textLabel?.textColor = UIColor.black
+            }
+        }else if tableView == toTableView {
+            if cell.isSelected {
+                cell.accessoryType = .checkmark
+                cell.textLabel?.textColor = UIColor.red
+            }else{
+                cell.accessoryType = .none
+                cell.textLabel?.textColor = UIColor.black
+            }
+        }
     }
     
 }
