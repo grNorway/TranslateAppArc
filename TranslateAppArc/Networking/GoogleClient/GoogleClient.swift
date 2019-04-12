@@ -10,8 +10,7 @@ import Foundation
 
 class GoogleClient {
     
-    static let apiKey = "AIzaSyB9KgxiWouUxpXcx4fzC0Tjkkvst4_NPpI"
-    // https://translation.googleapis.com/language/translate/v2/languages?key=AIzaSyB9KgxiWouUxpXcx4fzC0Tjkkvst4_NPpI
+    static let apiKey = ""
     
     enum Endpoints {
         static let base = "https://translation.googleapis.com/"
@@ -25,7 +24,7 @@ class GoogleClient {
         
         var stringValue : String {
             switch self {
-                //https://translation.googleapis.com/language/translate/v2?target=co&q=Hello&source=en&key=AIzaSyB9KgxiWouUxpXcx4fzC0Tjkkvst4_NPpI
+                
             case .getTranslation(let q,let target,let source) : return Endpoints.base + Endpoints.pathTranslations + Endpoints.apiKeyParam + "&q=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&target=\(target.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&source=\(source.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
             case .getLanguages : return Endpoints.base + Endpoints.pathLanguages + Endpoints.apiKeyParam + "&target=en"
             }
