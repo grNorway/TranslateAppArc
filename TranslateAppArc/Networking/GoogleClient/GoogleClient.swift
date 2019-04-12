@@ -24,7 +24,6 @@ class GoogleClient {
         
         var stringValue : String {
             switch self {
-                
             case .getTranslation(let q,let target,let source) : return Endpoints.base + Endpoints.pathTranslations + Endpoints.apiKeyParam + "&q=\(q.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&target=\(target.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")" + "&source=\(source.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
             case .getLanguages : return Endpoints.base + Endpoints.pathLanguages + Endpoints.apiKeyParam + "&target=en"
             }

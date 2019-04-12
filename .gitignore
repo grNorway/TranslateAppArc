@@ -11,4 +11,4 @@ Pods
 # Ignore Xcode user-related files
 xcuserdata/
 
-GoogleService-Info.plist
+/GoogleService-Info.plist
