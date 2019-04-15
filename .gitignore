@@ -1,17 +1,13 @@
-#Cocoa Pods
+# Cocoapods
 
-/Pods/
-/Pods
 Pods/
-Pods
 
-# Ignore macOS Finder user-related files
-.DS_Store
+#Xcode
 
-# Ignore Xcode user-related files
 xcuserdata/
 
-/GoogleService-Info.plist/
-GoogleService-Info.plist/
-/GoogleService-Info.plist
-GoogleService-Info.plist
+.DS_Store
+
+DerivedData/
+
+GoogleService-info.plist
